@@ -5,11 +5,18 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  overflow: hidden;
+  margin: 0;
 }
 
 .clear {
@@ -87,86 +94,44 @@ h3 {
   background: #e73700;
 }
 
-.book-section {
+.container {
   padding: 60px 50px;
-}
-
-.book-section .owl-stage {
   margin: 15px 0;
   display: flex;
   display: -webkit-flex;
 }
 
-.book-section .item {
-  margin: 0 15px 60px;
-  width: 320px;
-  height: 400px;
-  display: flex;
-  display: -webkit-flex;
-  align-items: flex-end;
-  -webkit-align-items: flex-end;
-  background: #343434 no-repeat center center / cover;
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  cursor: pointer;
-}
-
-.book-section .item.active {
-  width: 500px;
-  box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-}
-
-.book-section .item:after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-}
-
-.book-section .item-desc {
-  padding: 0 24px 12px;
+.item {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  width: 50%;
+  border-radius: 3px;
   color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
   position: relative;
-  z-index: 1;
-  overflow: hidden;
-  transform: translateY(calc(100% - 54px));
-  -webkit-transform: translateY(calc(100% - 54px));
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
+
 }
 
-.book-section .item.active .item-desc {
-  transform: none;
-  -webkit-transform: none;
+.item-desc h3 {
+  font-size: 24px;
+  padding: 15px;
+  bottom: 20px;
 }
 
-.book-section .item-desc p {
-  opacity: 0;
-  -webkit-transform: translateY(32px);
-  transform: translateY(32px);
-  transition: all 0.4s ease-in-out 0.2s;
-  -webkit-transition: all 0.4s ease-in-out 0.2s;
-}
 
-.book-section .item.active .item-desc p {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
 
-.book-section .owl-theme.custom-carousel .owl-dots {
-  margin-top: -20px;
-  position: relative;
-  z-index: 5;
-}
+
+
+
+
+
+
+
+
 
 @media (min-width: 992px) and (max-width: 1199px) {
   h2 {
@@ -178,7 +143,6 @@ h3 {
     font-size: 24px;
     line-height: 32px;
   }
-  
   .book-section {
     padding: 50px 30px;
   }
