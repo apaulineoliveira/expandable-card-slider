@@ -16,73 +16,22 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   overflow: hidden;
+  background-color: rgb(0, 0, 0);
   margin: 0;
 }
 
-.clear {
-  clear: both;
-}
-
-img {
-  filter: brightness(50%);
-  max-width: 100%;
-  border: 0px;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  outline: none;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-}
-
-a:focus,
-a:active,
-a:visited,
-a:hover {
-  text-decoration: none;
-  outline: none;
-}
-
-a:hover {
-  color: #e73700;
-}
-
-h2 {
-  margin-bottom: 48px;
-  padding-bottom: 16px;
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 700;
-  position: relative;
-  text-transform: capitalize;
-}
-
-h3 {
-  margin: 0 0 10px;
-  font-size: 28px;
-  line-height: 36px;
-}
-
-
 .container {
-  padding: 60px 50px;
+  padding: 80px 50px;
   margin: 15px 0;
+  margin-top: 60px;
   display: flex;
   display: -webkit-flex;
 }
 
 .item {  
   background-size: auto 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 63vh;
+  background-position: center;  
+  width: 200px;
   border-radius: 2px;
   color: #fff;
   cursor: pointer;
@@ -106,10 +55,14 @@ h3 {
   color: white;
   padding: 5%;
   font-size: 13px;
-  background-color: rgb(47, 7, 148);
-  text-align: center;
+  background-color: rgb(26, 26, 26);
   margin-top: 60%;
+  letter-spacing: Xpx;
   
+}
+
+.item-desc p:hover {
+  background-color: rgb(2, 47, 98);
 }
 
 .item.active .item-desc p {
@@ -120,7 +73,7 @@ h3 {
 
 .item-desc h3 {
   font-size: 24px;
-  padding: 15px;
+  padding: 20px;
   bottom: 20px;
   transform: translateY(calc(100% - 54px));
   -webkit-transform: translateY(calc(100% - 54px));
@@ -131,10 +84,9 @@ h3 {
   position: relative;
   z-index: 1;
   overflow: hidden;
-
 }
 
-.item.active {
+.item.active {  
   flex: 5;
   box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
 
@@ -143,12 +95,6 @@ h3 {
 .item.active h3 {
 
 }
-
-
-
-
-
-
 
 @media (min-width: 992px) and (max-width: 1199px) {
   h2 {
