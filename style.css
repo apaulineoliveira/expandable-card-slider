@@ -8,6 +8,31 @@
   box-sizing: border-box;
 }
 
+.line-title {
+  position: relative;
+  width: 400px;
+}
+
+.line-title::before,
+.line-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.line-title::before {
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.line-title::after {
+  width: 32px;
+  background: #e73700;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -20,7 +45,21 @@ body {
   margin: 0;
 }
 
+.item.active {
+  width: 500px;
+  box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+}
+
+.item.active .item-desc {
+  transform: none;
+  -webkit-transform: none;
+}
+
 .container {
+  margin-top: -20px;
+  position: relative;
+  z-index: 5;
   padding: 80px 50px;
   margin: 15px 0;
   margin-top: 60px;
@@ -29,18 +68,23 @@ body {
 }
 
 .item {  
-  background-size: auto 100%;
-  background-position: center;  
-  width: 200px;
-  border-radius: 2px;
-  color: #fff;
+  margin: 0 15px 60px;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  display: -webkit-flex;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+  background: #343434 no-repeat center center / cover;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
   cursor: pointer;
-  flex: 0.5;
-  margin: 10px;
-  position: relative;    
-}
+} 
 
-.item .item:after {
+.item:after {
   content: "";
   display: block;
   position: absolute;
@@ -52,17 +96,24 @@ body {
 }
 
 .item-desc p {
-  color: white;
-  padding: 5%;
-  font-size: 13px;
-  background-color: rgb(26, 26, 26);
-  margin-top: 60%;
-  letter-spacing: Xpx;
+  opacity: 0;
+  -webkit-transform: translateY(32px);
+  transform: translateY(32px);
+  transition: all 0.4s ease-in-out 0.2s;
+  -webkit-transition: all 0.4s ease-in-out 0.2s;
   
 }
 
-.item-desc p:hover {
-  background-color: rgb(2, 47, 98);
+.item-desc {
+  padding: 0 24px 12px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transform: translateY(calc(100% - 54px));
+  -webkit-transform: translateY(calc(100% - 54px));
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
 }
 
 .item.active .item-desc p {
@@ -87,119 +138,8 @@ body {
 }
 
 .item.active {  
-  flex: 5;
+  width: 500px;
   box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-
+  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
 }
 
-.item.active h3 {
-
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  h2 {
-    margin-bottom: 32px;
-  }
-
-  h3 {
-    margin: 0 0 8px;
-    font-size: 24px;
-    line-height: 32px;
-  }
-  .book-section {
-    padding: 50px 30px;
-  }
-
-  .book-section .item {
-    margin: 0 12px 60px;
-    width: 260px;
-    height: 360px;
-  }
-
-  .book-section .item.active {
-    width: 400px;
-  }
-
-  .book-section .item-desc {
-    transform: translateY(calc(100% - 46px));
-    -webkit-transform: translateY(calc(100% - 46px));
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  h2 {
-    margin-bottom: 32px;
-  }
-
-  h3 {
-    margin: 0 0 8px;
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  .line-title {
-    width: 330px;
-  }
-
-  .book-section {
-    padding: 50px 30px 40px;
-  }
-
-  .book-section .item {
-    margin: 0 12px 60px;
-    width: 240px;
-    height: 330px;
-  }
-
-  .book-section .item.active {
-    width: 360px;
-  }
-
-  .book-section .item-desc {
-    transform: translateY(calc(100% - 42px));
-    -webkit-transform: translateY(calc(100% - 42px));
-  }
-}
-
-@media (max-width: 767px) {
-
-  body {
-    font-size: 14px;
-  }
-
-  h2 {
-    margin-bottom: 20px;
-  }
-
-  h3 {
-    margin: 0 0 8px;
-    font-size: 19px;
-    line-height: 24px;
-  }
-  
-  .line-title {
-    width: 250px;
-  }
-
-  .book-section {
-    padding: 30px 15px 20px;
-  }
-
-  .book-section .item {
-    margin: 0 10px 40px;
-    width: 200px;
-    height: 280px;
-  }
-
-  .book-section .item.active {
-    width: 270px;
-    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-  }
-
-  .book-section .item-desc {
-    padding: 0 14px 5px;
-    transform: translateY(calc(100% - 42px));
-    -webkit-transform: translateY(calc(100% - 42px));
-  }
-}
