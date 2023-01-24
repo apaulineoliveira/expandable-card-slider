@@ -8,5 +8,3 @@
 </ul>
 <br>
 
-<h2>Sobre os códigos em HTML e CSS</h2>
-<p>Se tratando do código css e javascript foram utilizadas estruturas simples e intuitivas</p>
