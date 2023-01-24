@@ -1,6 +1,6 @@
-const items = document.querySelectorAll('.item')
+const ITEMS = document.querySelectorAll('.item')
 
-items.forEach(item =>{
+ITEMS.forEach(item =>{
   item.addEventListener('click',() => {
       removeActionClasses()
       item.classList.add('active')
@@ -8,7 +8,6 @@ items.forEach(item =>{
 })
 
 function removeActionClasses(){
-    items.forEach(item =>{
+    ITEMS.forEach(item =>{
         item.classList.remove('active')
-    })
-}
+})}
