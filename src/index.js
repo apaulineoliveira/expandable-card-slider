@@ -13,16 +13,16 @@ function removeActionClasses(){
 })}
 
 
-let currentIndex = 0; // Índice atual dos cartões visíveis
-const items = document.querySelectorAll('.item'); // Seleciona todos os cartões
+let currentIndex = 0; 
+const items = document.querySelectorAll('.item');
 
 document.querySelector('.show-more').addEventListener('click', () => {
-  // Oculta o cartão ativo
+ 
   if (currentIndex < items.length) {
     items[currentIndex].classList.remove('active');
     currentIndex++;
     
-    // Se houver mais cartões, ativa o próximo
+   
     if (currentIndex < items.length) {
       items[currentIndex].classList.add('active');
     }
